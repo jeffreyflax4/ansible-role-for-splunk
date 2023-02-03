@@ -10,3 +10,4 @@ linux_packages:
   - policycoreutils
   - gdb
   - bind-utils
+logrotate_file: /etc/logrotate.d/syslog
