@@ -7,3 +7,6 @@
   serial: 50
   vars:
     - deployment_task: check_splunk.yml
+  vars_files:
+    - /opt/ansible-role-for-splunk/roles/splunk/files/splunk_secrets.yml
+## The splunk_secrets.yml file includes the PWs for the splunk_ds_key, splunk_general_key, and splunk_admin_password variables
