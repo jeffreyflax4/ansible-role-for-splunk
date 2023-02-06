@@ -18,7 +18,7 @@ splunk_nix_user: splunk
 splunk_nix_group: splunk
 local_os_user: false # Whenther or not to force creation of a user using the `luseradd` or not.
 local_os_group: false # Whether or not to force creation of a group using the `lgroupadd` or not.
-splunk_uri_lm: undefined
+splunk_uri_lm: ec2-54-158-138-124.compute-1.amazonaws.com
 splunk_license_file: [] # This can be a list of license files to copy to the host.
 splunk_license_group: Trial # The default matches with the group splunk ships with. You can also set the value via a group_vars or host_vars file.
 splunk_uri_cm: undefined
