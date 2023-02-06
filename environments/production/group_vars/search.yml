@@ -1,4 +1,5 @@
 ---
+splunk_license_group: Peer
 splunk_firewall_ports:
   - "{{ splunkweb_port }}"
   - "{{ splunkapi_port }}"
