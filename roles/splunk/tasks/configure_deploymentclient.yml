@@ -12,9 +12,11 @@
   notify: restart splunk
   when:
     - splunk_uri_ds != 'undefined'
-    - not "'indexers' in group_names"
-    - not "'search_heads' in group_names"
-    - not "'splunk_mgmt' in group_names"
+    - "'indexer' not in group_names"
+    - "'search' not in group_names"
+    - "'splunk_mgmt' not in group_names"
+    - "'shdeployer' not in group_names"
+    - "'clustermanager' not in group_names"
 
 - name: Configure client name in deploymentclient.conf
   ini_file:
@@ -29,9 +31,11 @@
   notify: restart splunk
   when:
     - clientName != 'undefined'
-    - not "'indexers' in group_names"
-    - not "'search_heads' in group_names"
-    - not "'splunk_mgmt' in group_names"
+    - "'indexer' not in group_names"
+    - "'search' not in group_names"
+    - "'splunk_mgmt' not in group_names"
+    - "'shdeployer' not in group_names"
+    - "'clustermanager' not in group_names"
 
 - name: Configure phoneHomeIntervalInSecs in deploymentclient.conf
   ini_file:
@@ -46,9 +50,11 @@
   notify: restart splunk
   when:
     - phoneHomeIntervalInSecs != 'undefined'
-    - not "'indexers' in group_names"
-    - not "'search_heads' in group_names"
-    - not "'splunk_mgmt' in group_names"
+    - "'indexer' not in group_names"
+    - "'search' not in group_names"
+    - "'splunk_mgmt' not in group_names"
+    - "'shdeployer' not in group_names"
+    - "'clustermanager' not in group_names"
 
 - name: Configure deployment server pass4SymmKey in server.conf
   ini_file:
@@ -63,6 +69,8 @@
   notify: restart splunk
   when:
     - splunk_ds_key != 'undefined'
-    - not "'indexers' in group_names"
-    - not "'search_heads' in group_names"
-    - not "'splunk_mgmt' in group_names"
+    - "'indexer' not in group_names"
+    - "'search' not in group_names"
+    - "'splunk_mgmt' not in group_names"
+    - "'shdeployer' not in group_names"
+    - "'clustermanager' not in group_names"
