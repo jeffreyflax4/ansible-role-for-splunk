@@ -21,12 +21,11 @@
       - splunk_license_group=="Enterprise"
   - name: Copy license file
     copy:
-      src: "{{ item }}"
-      dest: "{{ splunk_home }}/etc/licenses/enterprise/{{ item }}"
+      src: "{{ splunk_license_file }}"
+      dest: "{{ splunk_home }}/etc/licenses/enterprise/{{ splunk_license_file }}"
       owner: "{{ splunk_nix_user }}"
       group: "{{ splunk_nix_group }}"
       mode: "0600"
-    loop: "{{ splunk_license_file }}"
     become: yes
     when:
       - splunk_license_group=="Enterprise"
