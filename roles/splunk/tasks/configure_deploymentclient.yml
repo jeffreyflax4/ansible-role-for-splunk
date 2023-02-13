@@ -15,8 +15,6 @@
     - "'indexer' not in group_names"
     - "'search' not in group_names"
     - "'splunk_mgmt' not in group_names"
-    - "'shdeployer' not in group_names"
-    - "'clustermanager' not in group_names"
 
 - name: Configure client name in deploymentclient.conf
   ini_file:
@@ -34,8 +32,6 @@
     - "'indexer' not in group_names"
     - "'search' not in group_names"
     - "'splunk_mgmt' not in group_names"
-    - "'shdeployer' not in group_names"
-    - "'clustermanager' not in group_names"
 
 - name: Configure phoneHomeIntervalInSecs in deploymentclient.conf
   ini_file:
@@ -53,8 +49,6 @@
     - "'indexer' not in group_names"
     - "'search' not in group_names"
     - "'splunk_mgmt' not in group_names"
-    - "'shdeployer' not in group_names"
-    - "'clustermanager' not in group_names"
 
 - name: Configure deployment server pass4SymmKey in server.conf
   ini_file:
@@ -72,5 +66,3 @@
     - "'indexer' not in group_names"
     - "'search' not in group_names"
     - "'splunk_mgmt' not in group_names"
-    - "'shdeployer' not in group_names"
-    - "'clustermanager' not in group_names"
