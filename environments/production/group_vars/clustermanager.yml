@@ -2,7 +2,9 @@
 # group vars for cluster manager
 splunk_license_group: Peer
 splunk_app_deploy_path: etc/master-apps # default subdirectory in splunk_home that apps from git should be installed to, overridable in git_apps if you want to install to etc/apps
-git_version: 1.0.0
+git_version: master
 git_apps:
-    - name: my_outputs
-    - name: Splunk_TA_nix
+    - name: ansible_all_indexes 
+    - name: ansible_cluster_indexer_base
+    - name: ansible_full_license_server
+    - name: ansible_indexer_volume_indexes

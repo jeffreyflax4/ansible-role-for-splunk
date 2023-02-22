@@ -2,49 +2,28 @@
 # Example host_vars for a deployment server that is leveraging the configure_serverclass.yml task to manage serverclass.conf
 serverclasses:
 # First server class example, basic definition:
-  - serverclass: ALL
+  - serverclass: all_forwarders
     whitelist:
       - '*'
+    blacklist:
+      - 'indexer'
     apps:
-      - name: my_outputs_addon
+      - name: ansible_all_forwarder_outputs
         options:
           restartSplunkd: 1
-# Second server class example, adding in the platform filter:
-  - serverclass: ALL_NIX
+  - serverclass: cluster_manager
+    whitelist:
+      - 'clustermanager'
+    apps:
+      - name: ansible_cluster_manager_base
+        options:
+          restartSplunkd: 1
+  - serverclass: all_license_slaves
     whitelist:
       - '*'
-    platform: linux-x86_64
+    blacklist:
+      - 'splunk_mgmt'
     apps:
-      - name: Splunk_TA_nix
+      - name: ansible_full_license_server 
         options:
           restartSplunkd: 1
-# Third server class example, adding multiple apps and filters with additional options configured for each app:
-  - serverclass: ALL_WINDOWS_x64
-    whitelist:
-      - 'hosta'
-      - 'hostb'
-      - 'windows-dc-*'
-    blacklist:
-      - 'hostc'
-    platform: windows-x64
-    apps:
-      - name: Splunk_TA_windows
-        options:
-          restartSplunkd: 0
-          restartIfNeeded: 1
-      - name: custom_windows_inputs
-        options:
-          restartSplunkWeb: 0
-          restartSplunkd: 1
-          stateOnClient: enabled
-
-# Fourth server class example, setting the restartSplunkd on the serverclass level:
-  - serverclass: ALL_WEB
-    restartSplunkd: 1
-    whitelist:
-      - 'webserver1'
-      - 'webserver2'
-    blacklist:
-      - 'webserver*dev'
-    apps:
-      - name: webserver_app

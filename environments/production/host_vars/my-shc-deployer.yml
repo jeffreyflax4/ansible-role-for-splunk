@@ -1,5 +1,10 @@
 ---
 deploy_target: my-shc-target-sh-uri
-git_version: 1.0.0 # This is the golden repo branch for this host! It retires all ID/ED/SB/CM projects and repos
+git_version: master # This is the golden repo branch for this host! It retires all ID/ED/SB/CM projects and repos
 git_apps:
-    - name: myapp
+    - name: ansible_all_forwarder_outputs
+    - name: ansible_all_indexes
+    - name: ansible_all_search_base
+    - name: ansible_cluster_search_base
+    - name: ansible_full_license_server
+    - name: ansible_search_volume_indexes

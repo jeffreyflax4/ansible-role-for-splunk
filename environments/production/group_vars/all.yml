@@ -5,3 +5,14 @@ ansible_ssh_private_key_file: ~/.ssh/my_ansible_ssh.key
 git_server: ssh://git@github.com:jeffreyflax4/deployment-apps.git
 git_key: ~/.ssh/id-rsa.pub
 git_project: deployment-apps
+git_version: master
+git_apps:
+  - name: ansible_all_forwarder_outputs
+  - name: ansible_all_indexes
+  - name: ansible_all_search_base
+  - name: ansible_cluster_indexer_base
+  - name: ansible_cluster_manager_base
+  - name: ansible_cluster_search_base
+  - name: ansible_full_license_server
+  - name: ansible_indexer_volume_indexes
+  - name: ansible_search_volume_indexes
