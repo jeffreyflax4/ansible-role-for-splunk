@@ -18,11 +18,11 @@ splunk_nix_user: splunk
 splunk_nix_group: splunk
 local_os_user: false # Whenther or not to force creation of a user using the `luseradd` or not.
 local_os_group: false # Whether or not to force creation of a group using the `lgroupadd` or not.
-splunk_uri_lm: ec2-54-165-191-109.compute-1.amazonaws.com:8089
+splunk_uri_lm: ec2-18-212-113-226.compute-1.amazonaws.com:8089
 splunk_license_file: Splunk.License # This can be a list of license files to copy to the host.
 splunk_license_group: Trial # The default matches with the group splunk ships with. You can also set the value via a group_vars or host_vars file.
-splunk_uri_cm: ec2-52-90-207-29.compute-1.amazonaws.com:8089
-splunk_uri_ds: ec2-54-165-191-109.compute-1.amazonaws.com:8089  # e.g. mydeploymentserver.mydomain.com:8089 ; Note that you must also configure the clientName var under either group_vars or host_vars for deploymentclient.conf to be configured
+splunk_uri_cm: ec2-23-20-121-24.compute-1.amazonaws.com:8089
+splunk_uri_ds: ec2-18-212-113-226.compute-1.amazonaws.com:8089  # e.g. mydeploymentserver.mydomain.com:8089 ; Note that you must also configure the clientName var under either group_vars or host_vars for deploymentclient.conf to be configured
 clientName: "{{ ansible_facts['fqdn'] }}"
 phoneHomeIntervalInSecs: 120
 #splunk_general_key: # Configures a pass4SymmKey in server.conf under the general stanza # Defined in files/splunk_secrets.yml
